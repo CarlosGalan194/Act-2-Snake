@@ -10,6 +10,7 @@ Exercises
 
 from random import randrange
 from turtle import *
+import random
 
 from freegames import square, vector
 
@@ -29,8 +30,20 @@ def inside(head):
     return -200 < head.x < 190 and -200 < head.y < 190
 
 
+def diff_color():
+    options = ['blue', 'purple', 'yellow', 'cyan', 'magenta']
+
+    color_snake = random.choice(options)
+    color_food = random.choice(options)
+
+    while color_snake == color_food:
+        color_food = random.choice(options)
+    return color_snake, color_food
+
 def move():
     """Move snake forward one segment."""
+    global color_snake, color_food
+
     head = snake[-1].copy()
     head.move(aim)
 
@@ -51,13 +64,13 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, color_snake)
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, color_food)
     update()
     ontimer(move, 100)
 
-
+color_snake, color_food = diff_color()
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
