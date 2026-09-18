@@ -4,7 +4,7 @@
 Este proyecto contiene una versión modificada del videojuego clásico de Snake, El código fuente original usado de base para este proyecto se puede encontrar en [Free Python Games](http://www.grantjenks.com/docs/freegames/snake.html)
 ## Modificaciones
 
-* **Cambio 1: La comida se volvió más aleatoria y se le añadió movimiento
+* **Cambio 1:** La comida se volvió más aleatoria y se le añadió movimiento
 * **Cambio 2:** Se añadieron colores tanto para la food como para la snake
 ## Ejecutar Localmente
 
